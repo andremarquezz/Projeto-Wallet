@@ -19,3 +19,9 @@ export const getCurrenciesAPI = () => async (dispatch) => {
   const currenciesFilter = Object.keys(data).filter((currency) => currency !== 'USDT');
   dispatch(setCurrencies(currenciesFilter));
 };
+
+export const SET_EXPENSE = 'SET_EXPENSE';
+export const setExpenses = (payload) => ({
+  type: SET_EXPENSE,
+  payload,
+});
