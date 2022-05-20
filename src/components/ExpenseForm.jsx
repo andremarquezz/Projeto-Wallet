@@ -9,9 +9,8 @@ class ExpenseForm extends React.Component {
       value: 0,
       description: '',
       currency: '',
-      method: '',
-      tag: '',
-      exchangeRates: {},
+      method: 'Cartão de crédito',
+      tag: 'Lazer',
     },
   };
 
@@ -65,61 +64,61 @@ class ExpenseForm extends React.Component {
     const { value, description } = expense;
     return (
       <form>
-        <label htmlFor="valor">
+        <label htmlFor='valor'>
           Valor:
           <input
-            data-testid="value-input"
-            type="number"
-            name="value"
-            value={ value }
-            onChange={ this.handleChange }
-            placeholder="Digite o valor"
+            data-testid='value-input'
+            type='number'
+            name='value'
+            value={value}
+            onChange={this.handleChange}
+            placeholder='Digite o valor'
           />
         </label>
-        <label htmlFor="descricao">
+        <label htmlFor='descricao'>
           <input
-            data-testid="description-input"
-            type="text"
-            name="description"
-            value={ description }
-            onChange={ this.handleChange }
-            placeholder="Digite uma descrição"
+            data-testid='description-input'
+            type='text'
+            name='description'
+            value={description}
+            onChange={this.handleChange}
+            placeholder='Digite uma descrição'
           />
         </label>
-        <label htmlFor="currency">
+        <label htmlFor='currency'>
           Moeda :
-          <select name="currency" id="currency" onClick={ this.handleChange }>
+          <select name='currency' id='currency' onClick={this.handleChange}>
             {currencies.map((coin, i) => (
-              <option key={ i } value={ coin }>
+              <option key={i} value={coin}>
                 {coin}
               </option>
             ))}
           </select>
         </label>
-        <label htmlFor="currency">
+        <label htmlFor='currency'>
           Método de pagamento:
-          <select name="method" data-testid="method-input" onClick={ this.handleChange }>
-            <option value="dinheiro">Dinheiro</option>
-            <option value="credito">Cartão de crédito</option>
-            <option value="debito">Cartão de débito</option>
+          <select name='method' data-testid='method-input' onClick={this.handleChange}>
+            <option value='Dinheiro'>Dinheiro</option>
+            <option value='Cartão de crédito'>Cartão de crédito</option>
+            <option value='Cartão de débito'>Cartão de débito</option>
           </select>
         </label>
-        <label htmlFor="typeExpense">
+        <label htmlFor='typeExpense'>
           Tipo de despesa:
           <select
-            name="tag"
-            id="typeExpense"
-            data-testid="tag-input"
-            onClick={ this.handleChange }
+            name='tag'
+            id='typeExpense'
+            data-testid='tag-input'
+            onClick={this.handleChange}
           >
-            <option value="alimentacao">Alimentação</option>
-            <option value="lazer">Lazer</option>
-            <option value="trabalho">Trabalho</option>
-            <option value="transporte">Transporte</option>
-            <option value="saude">Saúde</option>
+            <option value='Alimentação'>Alimentação</option>
+            <option value='Lazer'>Lazer</option>
+            <option value='Trabalho'>Trabalho</option>
+            <option value='Transporte'>Transporte</option>
+            <option value='Saúde'>Saúde</option>
           </select>
         </label>
-        <button type="button" onClick={ this.createExpense }>
+        <button type='button' onClick={this.createExpense}>
           Adicionar despesa
         </button>
       </form>
