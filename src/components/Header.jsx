@@ -7,19 +7,22 @@ class Header extends React.Component {
     totalField: 0,
   };
 
-  calculatesExchangeRates = () => {
+  calculateTotalField = () => {
+    console.log('entrei');
     const { expenses } = this.props;
-    expenses.forEach(({ currency, exchangeRates }) => {
-      const { ask } = exchangeRates[currency];
-
-      // this.setState((prevState) => {
-      // totalField: prevState.totalField + Number(ask).toFixed(2);
-      // });
+    const { totalField } = this.state;
+    let newTotal = totalField;
+    expenses.forEach(({ currency, exchangeRates, value }) => {
+      const fieldExpense = (exchangeRates[currency].ask * value).toFixed(2);
+      newTotal += fieldExpense;
+      console.log(newTotal);
+    });
+    this.setState({
+      totalField: newTotal,
     });
   };
 
   render() {
-    this.calculatesExchangeRates();
     const { userEmail } = this.props;
     const { totalField } = this.state;
     return (
