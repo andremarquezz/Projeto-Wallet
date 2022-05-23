@@ -3,32 +3,19 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 
 class Header extends React.Component {
-  state = {
-    totalField: 0,
-  };
-
-  calculateTotalField = () => {
-    console.log('entrei');
-    const { expenses } = this.props;
-    const { totalField } = this.state;
-    let newTotal = totalField;
-    expenses.forEach(({ currency, exchangeRates, value }) => {
-      const fieldExpense = (exchangeRates[currency].ask * value).toFixed(2);
-      newTotal += fieldExpense;
-      console.log(newTotal);
-    });
-    this.setState({
-      totalField: newTotal,
-    });
-  };
-
   render() {
     const { userEmail } = this.props;
-    const { totalField } = this.state;
+    const { expenses } = this.props;
+    const newTotal = expenses.reduce((acc, { currency, exchangeRates, value }) => {
+      const fieldExpense = exchangeRates[currency].ask * value;
+      acc += fieldExpense;
+      return acc;
+    }, 0);
+
     return (
       <div>
         <h3 data-testid="email-field">{userEmail}</h3>
-        <p data-testid="total-field">{totalField}</p>
+        <p data-testid="total-field">{newTotal.toFixed(2)}</p>
         <span data-testid="header-currency-field">BRL</span>
       </div>
     );
