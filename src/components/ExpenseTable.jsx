@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 
 class ExpenseTable extends Component {
+  nameCurrency = (currency, exchangeRates) => {
+    const { name } = exchangeRates[currency];
+    const currencyName = name.split('/');
+    return currencyName[0];
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -25,9 +31,9 @@ class ExpenseTable extends Component {
                 <td>{description}</td>
                 <td>{tag}</td>
                 <td>{method}</td>
-                <td>{value}</td>
-                <td>{currency}</td>
-                <td>{exchangeRates[currency].ask}</td>
+                <td>{Number(value).toFixed(2)}</td>
+                <td>{this.nameCurrency(currency, exchangeRates)}</td>
+                <td>{Number(exchangeRates[currency].ask).toFixed(2)}</td>
                 <td>{(exchangeRates[currency].ask * value).toFixed(2)}</td>
                 <td>Real</td>
                 <td>Editar/Excluir</td>
