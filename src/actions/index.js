@@ -25,3 +25,9 @@ export const setExpenses = (payload) => ({
   type: SET_EXPENSE,
   payload,
 });
+
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const newExpenses = (payload) => ({
+  type: DELETE_EXPENSE,
+  payload,
+});

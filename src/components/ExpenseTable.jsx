@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
+import { newExpenses } from '../actions';
 
 class ExpenseTable extends Component {
-  nameCurrency = (currency, exchangeRates) => {
-    const { name } = exchangeRates[currency];
-    const currencyName = name.split('/');
-    return currencyName[0];
+  deleteExpense = (id) => {
+    const { expenses, setExpenses } = this.props;
+    const updatedExpenses = expenses.filter((expense) => expense.id !== id);
+    setExpenses(updatedExpenses);
   };
 
   render() {
@@ -32,11 +33,20 @@ class ExpenseTable extends Component {
                 <td>{tag}</td>
                 <td>{method}</td>
                 <td>{Number(value).toFixed(2)}</td>
-                <td>{this.nameCurrency(currency, exchangeRates)}</td>
+                <td>{exchangeRates[currency].name.split('/')[0]}</td>
                 <td>{Number(exchangeRates[currency].ask).toFixed(2)}</td>
                 <td>{(exchangeRates[currency].ask * value).toFixed(2)}</td>
                 <td>Real</td>
-                <td>Editar/Excluir</td>
+                <td>
+                  <button type="button">Editar</button>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                    onClick={ () => this.deleteExpense(id) }
+                  >
+                    Excluir
+                  </button>
+                </td>
               </tr>
             ),
           )}
@@ -50,8 +60,13 @@ const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  setExpenses: (arrayExpenses) => dispatch(newExpenses(arrayExpenses)),
+});
+
 ExpenseTable.propTypes = {
   expenses: propTypes.arrayOf(Object).isRequired,
+  setExpenses: propTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(ExpenseTable);
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseTable);
