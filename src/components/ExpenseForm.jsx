@@ -47,7 +47,7 @@ class ExpenseForm extends React.Component {
     const { setExpense, amount } = this.props;
     const isExpenseNull = Object.values(expense).some((value) => value === '');
     if (isExpenseNull) {
-      return;
+      return console.log('Há campos não preenchidos');
     }
     const exchangeRates = await this.getExchangeRatesAPI();
     const newExpense = { id: amount.length, ...expense, exchangeRates };
