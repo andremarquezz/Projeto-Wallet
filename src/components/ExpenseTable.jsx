@@ -20,16 +20,15 @@ class ExpenseTable extends Component {
             <th>Editar/Excluir</th>
           </tr>
           {expenses.map(
-            ({ id, method, value, currency, description, tag }) => (
+            ({ id, method, value, currency, description, tag, exchangeRates }) => (
               <tr key={ id }>
                 <td>{description}</td>
                 <td>{tag}</td>
                 <td>{method}</td>
                 <td>{value}</td>
                 <td>{currency}</td>
-                <td>Câmbio utilizado</td>
-                <td>Valor convertido</td>
-                {/* <td>{exchangeRates.find(({ name }) => name === currency)}</td> */}
+                <td>{exchangeRates[currency].ask}</td>
+                <td>{(exchangeRates[currency].ask * value).toFixed(2)}</td>
                 <td>Real</td>
                 <td>Editar/Excluir</td>
               </tr>
