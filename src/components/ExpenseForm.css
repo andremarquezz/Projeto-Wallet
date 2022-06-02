@@ -1,3 +1,7 @@
-.form-control {
-  width: 15%;
+.inputform {
+  width: 150px;
+}
+
+.inputnumber {
+  width: 80px;
 }

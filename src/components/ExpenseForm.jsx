@@ -48,7 +48,7 @@ class ExpenseForm extends React.Component {
     const { setExpense, amount } = this.props;
     const isExpenseNull = Object.values(expense).some((value) => value === '');
     if (isExpenseNull) {
-      return console.log('Há campos não preenchidos');
+      return alert('Há campos não preenchidos');
     }
     const exchangeRates = await this.getExchangeRatesAPI();
     const newExpense = { id: amount.length, ...expense, exchangeRates };
@@ -61,13 +61,13 @@ class ExpenseForm extends React.Component {
     const { expense } = this.state;
     const { value, description } = expense;
     return (
-      <form className="input-group flex-nowrap container">
+      <form className="input-group flex-nowrap ">
         <input
           type="number"
           name="value"
           value={value}
           onChange={this.handleChange}
-          className="form-control"
+          className="input-group-text  inputnumber"
         />
         <input
           data-testid="description-input"
@@ -75,10 +75,17 @@ class ExpenseForm extends React.Component {
           name="description"
           value={description}
           onChange={this.handleChange}
-          placeholder="Digite uma descrição"
+          placeholder="Descrição"
+          className="input-group-text inputform"
         />
-        <label htmlFor="currency">
-          <select name="currency" id="currency" onChange={this.handleChange}>
+        <label htmlFor="currency" className="input-group-text">
+          <select
+            name="currency"
+            id="currency"
+            onChange={this.handleChange}
+            className="input-group-text inputform"
+          >
+            <option value="Moeda">Moeda</option>
             {currencies.map((coin, i) => (
               <option key={i} value={coin}>
                 {coin}
@@ -86,22 +93,27 @@ class ExpenseForm extends React.Component {
             ))}
           </select>
         </label>
-        <label htmlFor="currency">
-          Método de pagamento:
-          <select name="method" data-testid="method-input" onChange={this.handleChange}>
+        <label htmlFor="currency" className="input-group-text">
+          <select
+            name="method"
+            onChange={this.handleChange}
+            className="input-group-text inputform"
+          >
+            <option value="Método">Pagamento</option>
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de crédito">Cartão de crédito</option>
             <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
-        <label htmlFor="typeExpense">
-          Tipo de despesa:
+        <label htmlFor="typeExpense" className="input-group-text">
           <select
             name="tag"
             id="typeExpense"
             data-testid="tag-input"
             onChange={this.handleChange}
+            className="input-group-text"
           >
+            <option value="Despesa">Tipo de despesa</option>
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
             <option value="Trabalho">Trabalho</option>

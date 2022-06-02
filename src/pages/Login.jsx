@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setUser } from '../store/actions';
-
+import './Login.css';
 class Login extends React.Component {
   state = {
     email: '',
@@ -19,7 +19,7 @@ class Login extends React.Component {
       },
       () => {
         this.validateEmail();
-      },
+      }
     );
   };
 
@@ -50,7 +50,7 @@ class Login extends React.Component {
         },
         () => {
           this.validatePassword();
-        },
+        }
       );
     } else {
       this.setState(
@@ -59,7 +59,7 @@ class Login extends React.Component {
         },
         () => {
           this.validatePassword();
-        },
+        }
       );
     }
   };
@@ -68,20 +68,27 @@ class Login extends React.Component {
     const { submit } = this.state;
     return (
       <div>
-        <form>
+        <form className="login">
           <input
+            className="input-group-text"
             type="email"
             placeholder="Digite seu email"
             data-testid="email-input"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
           />
           <input
+            className="input-group-text"
             type="password"
             placeholder="Digite sua senha"
             data-testid="password-input"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
           />
-          <button type="submit" onClick={ this.handleSubmit } disabled={ submit }>
+          <button
+            className="btn btn-primary"
+            type="submit"
+            onClick={this.handleSubmit}
+            disabled={submit}
+          >
             Entrar
           </button>
         </form>
