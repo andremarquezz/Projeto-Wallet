@@ -25,6 +25,7 @@
     "stylelint-order": "4.1.0"
   },
   "scripts": {
+    "publicar": "npm run build && ./node_modules/.bin/gh-pages -d build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
