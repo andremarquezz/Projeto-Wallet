@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { setExpenses } from '../actions';
+import { setExpenses } from '../store/actions';
+import './ExpenseForm.css';
 
 class ExpenseForm extends React.Component {
   state = {
@@ -60,33 +61,26 @@ class ExpenseForm extends React.Component {
     const { expense } = this.state;
     const { value, description } = expense;
     return (
-      <form>
-        <label htmlFor="valor">
-          Valor:
-          <input
-            data-testid="value-input"
-            type="number"
-            name="value"
-            value={ value }
-            onChange={ this.handleChange }
-            placeholder="Digite o valor"
-          />
-        </label>
-        <label htmlFor="descricao">
-          <input
-            data-testid="description-input"
-            type="text"
-            name="description"
-            value={ description }
-            onChange={ this.handleChange }
-            placeholder="Digite uma descrição"
-          />
-        </label>
+      <form className="input-group flex-nowrap container">
+        <input
+          type="number"
+          name="value"
+          value={value}
+          onChange={this.handleChange}
+          className="form-control"
+        />
+        <input
+          data-testid="description-input"
+          type="text"
+          name="description"
+          value={description}
+          onChange={this.handleChange}
+          placeholder="Digite uma descrição"
+        />
         <label htmlFor="currency">
-          Moeda :
-          <select name="currency" id="currency" onChange={ this.handleChange }>
+          <select name="currency" id="currency" onChange={this.handleChange}>
             {currencies.map((coin, i) => (
-              <option key={ i } value={ coin }>
+              <option key={i} value={coin}>
                 {coin}
               </option>
             ))}
@@ -94,7 +88,7 @@ class ExpenseForm extends React.Component {
         </label>
         <label htmlFor="currency">
           Método de pagamento:
-          <select name="method" data-testid="method-input" onChange={ this.handleChange }>
+          <select name="method" data-testid="method-input" onChange={this.handleChange}>
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de crédito">Cartão de crédito</option>
             <option value="Cartão de débito">Cartão de débito</option>
@@ -106,7 +100,7 @@ class ExpenseForm extends React.Component {
             name="tag"
             id="typeExpense"
             data-testid="tag-input"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
           >
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
@@ -115,7 +109,7 @@ class ExpenseForm extends React.Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
-        <button type="button" onClick={ this.createExpense }>
+        <button type="button" onClick={this.createExpense} className="btn btn-primary">
           Adicionar despesa
         </button>
       </form>
