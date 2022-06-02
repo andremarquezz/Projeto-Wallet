@@ -66,6 +66,6 @@ _3- Executar o comando abaixo no terminal, dentro da pasta do projeto._
 npm start
 ```
 
-# Utilatrios
+# Links Úteis
 
 [API Awesome](https://economia.awesomeapi.com.br/json/all)
