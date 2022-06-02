@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ProjetoWallet/static/css/main.24e66069.chunk.css",
-    "main.js": "/ProjetoWallet/static/js/main.d43eab06.chunk.js",
-    "main.js.map": "/ProjetoWallet/static/js/main.d43eab06.chunk.js.map",
+    "main.css": "/ProjetoWallet/static/css/main.91bafa02.chunk.css",
+    "main.js": "/ProjetoWallet/static/js/main.ed8b73d0.chunk.js",
+    "main.js.map": "/ProjetoWallet/static/js/main.ed8b73d0.chunk.js.map",
     "runtime-main.js": "/ProjetoWallet/static/js/runtime-main.1b126f62.js",
     "runtime-main.js.map": "/ProjetoWallet/static/js/runtime-main.1b126f62.js.map",
     "static/js/2.9498f4af.chunk.js": "/ProjetoWallet/static/js/2.9498f4af.chunk.js",
     "static/js/2.9498f4af.chunk.js.map": "/ProjetoWallet/static/js/2.9498f4af.chunk.js.map",
     "index.html": "/ProjetoWallet/index.html",
-    "precache-manifest.392177cc70b70e0459c91ce9917dfbf0.js": "/ProjetoWallet/precache-manifest.392177cc70b70e0459c91ce9917dfbf0.js",
+    "precache-manifest.1b84027991c088c9d208f89c50825c8e.js": "/ProjetoWallet/precache-manifest.1b84027991c088c9d208f89c50825c8e.js",
     "service-worker.js": "/ProjetoWallet/service-worker.js",
-    "static/css/main.24e66069.chunk.css.map": "/ProjetoWallet/static/css/main.24e66069.chunk.css.map",
+    "static/css/main.91bafa02.chunk.css.map": "/ProjetoWallet/static/css/main.91bafa02.chunk.css.map",
     "static/js/2.9498f4af.chunk.js.LICENSE.txt": "/ProjetoWallet/static/js/2.9498f4af.chunk.js.LICENSE.txt",
-    "static/js/main.d43eab06.chunk.js.LICENSE.txt": "/ProjetoWallet/static/js/main.d43eab06.chunk.js.LICENSE.txt"
+    "static/js/main.ed8b73d0.chunk.js.LICENSE.txt": "/ProjetoWallet/static/js/main.ed8b73d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1b126f62.js",
     "static/js/2.9498f4af.chunk.js",
-    "static/css/main.24e66069.chunk.css",
-    "static/js/main.d43eab06.chunk.js"
+    "static/css/main.91bafa02.chunk.css",
+    "static/js/main.ed8b73d0.chunk.js"
   ]
 }

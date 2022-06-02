@@ -61,7 +61,7 @@ class ExpenseForm extends React.Component {
     const { expense } = this.state;
     const { value, description } = expense;
     return (
-      <form className="input-group flex-nowrap ">
+      <form className="input-group flex-nowrap">
         <input
           type="number"
           name="value"
@@ -113,7 +113,7 @@ class ExpenseForm extends React.Component {
             onChange={this.handleChange}
             className="input-group-text"
           >
-            <option value="Despesa">Tipo de despesa</option>
+            <option selected value="Despesa">Tipo de despesa</option>
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
             <option value="Trabalho">Trabalho</option>

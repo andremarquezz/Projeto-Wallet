@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7050b32d2f89e315c475825c484ae17b",
+    "revision": "0f6c7e1484d42854110c965e882813f7",
     "url": "/ProjetoWallet/index.html"
   },
   {
-    "revision": "cbdf479a0f5f3803707f",
-    "url": "/ProjetoWallet/static/css/main.24e66069.chunk.css"
+    "revision": "41b54c3328e5eabcf30d",
+    "url": "/ProjetoWallet/static/css/main.91bafa02.chunk.css"
   },
   {
     "revision": "ce0570667ee3679efa2d",
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ProjetoWallet/static/js/2.9498f4af.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cbdf479a0f5f3803707f",
-    "url": "/ProjetoWallet/static/js/main.d43eab06.chunk.js"
+    "revision": "41b54c3328e5eabcf30d",
+    "url": "/ProjetoWallet/static/js/main.ed8b73d0.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/ProjetoWallet/static/js/main.d43eab06.chunk.js.LICENSE.txt"
+    "url": "/ProjetoWallet/static/js/main.ed8b73d0.chunk.js.LICENSE.txt"
   },
   {
     "revision": "daa488678246c77ce8ac",
