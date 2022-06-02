@@ -1,7 +1,7 @@
 <img src="https://img.shields.io/github/issues/andremarquezz/ProjetoWallet"/> <img src="https://img.shields.io/github/forks/andremarquezz/ProjetoWallet"/> <img src="https://img.shields.io/github/stars/andremarquezz/ProjetoWallet"/> <img src="https://img.shields.io/github/license/andremarquezz/ProjetoWallet"/> 
 
-<h1 align="center">Carteira Digital com conversão</h1>
-<p align="center">Uma carteira digital que tem capacidade de se comunicar com as cotações das moedas para fazer o controle de gastos da pessoa usuária.</p>
+<h1 align="center">Carteira Digital</h1>
+<p align="center">Uma carteira digital que tem a capacidade de fazer o controle de gastos da pessoa usuária com as cotações das moedas no momento atual.</p>
 <p align="center"> 
   <img src="src/assets/to_readme/walletGif.gif">
  </p>
@@ -18,7 +18,7 @@
 
 ### 💻 Sobre o Projeto
 
-<p> Foi utilizado a API de Cotação de Moedas da Awesome API (https://lnkd.in/dxDGX8KU), que entrega os valores da moeda no momento atual, que serão utilizadas para fazer a conversão em BRL.</p>
+<p> Foi utilizado a API de Cotação de Moedas da Awesome API, que entrega os valores da moeda no momento atual, que serão utilizadas para fazer a conversão em BRL.</p>
 
 ### 🛠 Tecnologias utilizadas no desenvolvimento do projeto
 
@@ -66,3 +66,6 @@ _3- Executar o comando abaixo no terminal, dentro da pasta do projeto._
 npm start
 ```
 
+# Utilatrios
+
+[API Awesome](https://economia.awesomeapi.com.br/json/all)
