@@ -2,7 +2,6 @@
   "name": "wallet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://andremarquezz.github.io/ProjetoWallet",
   "engines": {
     "node": "16"
   },
