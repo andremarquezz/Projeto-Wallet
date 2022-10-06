@@ -37,7 +37,7 @@
 _Copie a URL abaixo e cole no seu navegador_
 
 ```jsx
-https://andremarquezz.github.io/ProjetoWallet/#/
+https://projetowallet.vercel.app/
 ```
 
 ### Localmente
